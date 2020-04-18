@@ -20,23 +20,20 @@ import Foundation
 
 class Program {
     func moveElementToEnd(_ array: inout [Int], _ toMove: Int) -> [Int] {
-                var high = array.count - 1
-                var low = 0
-          while low < high && high > 0 {
-                
-                if array[high] == toMove {
-                    high -= 1
-                    }
-                    
-                if array[low] != toMove {
-                    low += 1
-                    }
-                    
-                if array[low] == toMove && array[high] != toMove {
-                    let temp = array[low]
-                    array[low] = array[high]
-                    array[high] = temp
+        var high = array.count - 1
+        var low = 0
+        while low < high {
+            
+            while  array[high] == toMove, low < high {
+                high -= 1
             }
+            
+            if array[low] == toMove {
+                
+                (array[low], array[high]) = (array[high],array[low])
+            }
+            
+            low += 1
         }
         return array
     }
