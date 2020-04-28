@@ -1,5 +1,5 @@
 //
-// ProblemName : Happy Number
+// ProblemName : Single Number
 // URL : https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/528/week-1/3283/
 // Created by Varun Rathi on 13/04/20.
 //
