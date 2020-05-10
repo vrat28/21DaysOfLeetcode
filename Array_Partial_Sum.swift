@@ -15,7 +15,8 @@ class PartialSum {
     
     init(array:[Int]) {
         self.arr = array
-        build()
+        sumArr = [Int]()
+        buildPartialSum()
     }
     
     func query(_ L:Int, _ R:Int) ->Int {
@@ -26,8 +27,8 @@ class PartialSum {
        return total
     }
     
-    func build(){
-        sumArr = [Int]()
+    func buildPartialSum(){
+        
         var sum = 0
         for i in 0..<arr.count{
             sum += arr[i]
