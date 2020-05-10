@@ -1,29 +1,27 @@
 //
 //  MaxSumSubArray.swift
-//  
-//
+//  Link -  https://leetcode.com/problems/maximum-subarray/
+//  Solution:- https://leetcode.com/problems/maximum-subarray/submissions/
 //  Created by Varun Rathi on 10/05/20.
 //
 
 import Foundation
 
 class MaxSumSubArray {
-    func maxSum(a:[Int]) -> Int{
-        var prevSum = 0
-        var currentSum = 0
-        var maxSum = 0
-        
-        for i in 0..<a.count{
-            currentSum = max(prevSum + a[i], a[i])
-            maxSum = max(maxSum, currentSum)
-            prevSum = currentSum
+    
+    func maxSubArray(_ nums: [Int]) -> Int {
+        var currentSum = nums[0]
+        var maxSum = currentSum
+        for i in 1..<nums.count {
+            currentSum = max(currentSum + nums[i], nums[i])
+            maxSum = max(maxSum,currentSum)
         }
         return maxSum
     }
     
     func test(){
         let input = [100,-2,4,7,-8,0,17]
-        let result = maxSum(a: input)
+        let result = maxSubArray(input)
         print(result)
     }
 }
