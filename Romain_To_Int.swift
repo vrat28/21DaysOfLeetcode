@@ -11,17 +11,18 @@ import Foundation
 class RomanToInt {
     func romanToInt(_ s: String) -> Int {
         let map:[Character:Int] = ["I":1, "V": 5,   "X":10, "L":50, "C":100,  "D":500, "M":1000]
-        let negativeMap:[String:Int] = ["IX":2,"IV":2,"XL":20,"XC":20, "CD":200,"CM":200]
         var numberSum = 0
-        for char in s {
+        var lastDigit = 0
+        for char in s.reversed() {
             if let digit = map[char] {
-                numberSum += digit
-            }
-        }
-        
-        for negativeCase in negativeMap.keys{
-            if s.contains(negativeCase), let negativeVal = negativeMap[negativeCase]{
-                numberSum -= negativeVal
+                
+                if digit >= lastDigit {
+                    numberSum += digit
+                }
+                else {
+                    numberSum -= digit
+                }
+                lastDigit  = digit
             }
         }
         return numberSum
