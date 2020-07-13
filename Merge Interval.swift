@@ -14,7 +14,7 @@ class MergeInterval {
             if var lastInterval = output.popLast() {
                 
                 if lastInterval.1 >= i.0 {
-                    lastInterval.1 = i.1
+                    lastInterval.1 = max(i.1, lastInterval.1)
                     output.append(lastInterval)
                 }
                 else {
