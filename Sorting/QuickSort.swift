@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 class QuickSort{
     
     // generic method for swaping
