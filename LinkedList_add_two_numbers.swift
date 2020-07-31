@@ -21,7 +21,6 @@ class LinkedList {
     
         let head = ListNode(-1)
         var start: ListNode?
-        
         var curr1 = l1
         var curr2 = l2
         var carry = 0
@@ -41,8 +40,8 @@ class LinkedList {
                 }
             
                 carry = val > 9 ? 1 : 0
-               curr1 = curr1?.next
-               curr2 = curr2?.next
+                curr1 = curr1?.next
+                curr2 = curr2?.next
         }
         
         if carry > 0 {
